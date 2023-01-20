@@ -13,7 +13,7 @@ function App() {
     %0A%0A`
 
     let bodyMiddle = emailInfo.students.map((student) => {
-      return `- ${student.name} : ${student.hours}h`
+      return `- ${student.name} : ${student.hours}uur`
     }).join('%0A')
 
     let bodyBottom = `%0A
