@@ -28,7 +28,7 @@ function App() {
     let currentdate = new Date();
     var oneJan = new Date(currentdate.getFullYear(), 0, 1);
     var numberOfDays = Math.floor((currentdate - oneJan) / (24 * 60 * 60 * 1000));
-    var weekNumber = Math.ceil((currentdate.getDay() + 1 + numberOfDays) / 7);
+    var weekNumber = Math.ceil((currentdate.getDay() + 1 + numberOfDays) / 7) - 1;
 
     let subject = `Verzuim week ${weekNumber} - klas ${emailInfo.klas}`
     return subject
