@@ -14,11 +14,12 @@ export default function NavBar({ onToggle }) {
             <div className="flex-1 justify-between">
                 <a className="btn btn-ghost normal-case text-xl">Fab App</a>
                 <div className="flex absolute left-1/2 -translate-x-1/2">
-                    <span className="mr-4">Wed</span>
+                    <span className="mr-4 font-bold ">Wed</span>
                     <input type="checkbox" className="toggle" defaultChecked={isCheck} onChange={toggleDay} />
-                    <span className="ml-4">Fri</span>
+                    <span className="ml-4 font-bold ">Fri</span>
                 </div>
-                <a className="mr-2 text-primary-content" href="https://github.com/Fabax/student-email/blob/master/README.md" target="_blank">help</a>
+                <a className="mr-2 text-primary-content font-bold"
+                    href="https://github.com/Fabax/student-email/blob/master/README.md" target="_blank">help</a>
             </div>
         </div>
     )
