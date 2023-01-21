@@ -7,7 +7,8 @@ export default function EmailCard({ emailInfo, day }) {
 
     const getBody = (emailInfo) => {
 
-        let bodyTop = `Beste ${emailInfo.teacher.map((v) => { return capitalize(v) }).join(" en ")},`
+        let bodyTop = `Beste ${emailInfo.teacher.map(value => ({ value, sort: Math.random() }))
+            .sort((a, b) => a.sort - b.sort).map(({ value }) => value).map((v) => { return capitalize(v) }).join(" en ")},`
 
         let line1 = day === "wed" ?
             `Bij deze stuur ik je de lijst met absenties en te laat meldingen tot nu toe.` :
