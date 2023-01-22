@@ -13,7 +13,7 @@
 - **email** : the emails(s) for the mentor(s). if there are several emails, they should be sepaerated by a `,`. ex : `hello@lol.com, lol@hello.com`
 - **lead** : the email added in cc, only 1 email us supported
 
-## teacher file
+### teacher file
 `| voornaam  | achternaam  | klas  | a  | l  |`
 
 - **voornaam** : student first name

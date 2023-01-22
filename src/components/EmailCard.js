@@ -10,9 +10,11 @@ export default function EmailCard({ emailInfo, day }) {
         let bodyTop = `Beste ${emailInfo.teacher.map(value => ({ value, sort: Math.random() }))
             .sort((a, b) => a.sort - b.sort).map(({ value }) => value).map((v) => { return capitalize(v) }).join(" en ")},`
 
+        let sujet = emailInfo.teacher.length > 1 ? 'jullie' : 'je'
+
         let line1 = day === "wed" ?
-            `Bij deze stuur ik je de lijst met absenties en te laat meldingen tot nu toe.` :
-            `Bij deze stuur ik je de lijst met absenties en te laat meldingen van de volledige week.`
+            `Bij deze stuur ik ${sujet} de lijst met absenties en te laat meldingen tot nu toe.` :
+            `Bij deze stuur ik ${sujet} de lijst met absenties en te laat meldingen van de volledige week.`
 
         // absent ============
         let absentArray = emailInfo.students.filter((student) => { return student.absent > 0 ? true : false; })
