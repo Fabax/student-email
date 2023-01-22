@@ -2,15 +2,11 @@ import './App.css';
 import FormImport from './components/FormImport';
 import EmailCard from './components/EmailCard';
 import NavBar from './components/NavBar';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 function App() {
   const [emailInfos, setEmailInfos] = useState([])
   const [day, setDay] = useState('wed')
-
-  useEffect(() => {
-    console.log('day', day)
-  }, [day])
 
   return (
     <div className="App flex flex-col justify-center items-center" >
