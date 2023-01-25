@@ -42,7 +42,8 @@ export default function EmailCard({ emailInfo, day }) {
 
         let list = array.map((student) => {
             let absentBefore = title === 'Absent' && student.absentBefore ? ', had ook verzuim vorige week.' : '.'
-            return `- ${capitalize(student.name)} ${capitalize(student.lastName)} : ${title === 'Absent' ? student.absent : student.late} uur${absentBefore}`
+            let timing = title === 'Absent' ? 'uur' : 'keer';
+            return `- ${capitalize(student.name)} ${capitalize(student.lastName)} : ${title === 'Absent' ? student.absent : student.late} ${timing}${absentBefore}`
         }).join('%0A')
 
         let message = array.length > 0 ? `${title}:%0A${list}` : '';

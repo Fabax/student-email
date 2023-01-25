@@ -56,7 +56,7 @@ export default function FileImport({ title, listType, onImported, optional }) {
                 <h3 className="card-title mb-6" >{title} {listType === 'students' ? '👨‍🎓' : '👩‍🏫'}</h3>
                 <form >
                     <input className="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold"
-                        type={"file"} accept={".csv"} onChange={handleOnChange} />
+                        type={"file"} accept={".csv, .pdf"} onChange={handleOnChange} />
                     <div className="card-actions justify-center mt-6">
                         {file ?
                             <button className="btn btn-sm btn-primary text-primary-content" onClick={(e) => { handleOnSubmit(e); }}>import {listType}</button> :
