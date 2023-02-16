@@ -12,9 +12,7 @@ export default function EmailCard({ emailInfo, day }) {
 
         let sujet = emailInfo.teacher.length > 1 ? 'jullie' : 'je'
 
-        let line1 = day === "wed" ?
-            `Bij deze stuur ik ${sujet} de lijst met absenties en te laat meldingen tot nu toe.` :
-            `Bij deze stuur ik ${sujet} de lijst met absenties en te laat meldingen van de volledige week.`
+        let line1 = `Bij deze stuur ik ${sujet} de lijst met absenties en te laat meldingen van deze week.`
 
         // absent ============
         let absentArray = emailInfo.students.filter((student) => { return student.absent > 0 ? true : false; })
@@ -24,10 +22,8 @@ export default function EmailCard({ emailInfo, day }) {
         let lateArray = emailInfo.students.filter((student) => { return student.late > 0 ? true : false; })
         let lateMessage = getListMessage(lateArray, 'Te laat')
         // =====
-
-        let bodyBottom = day === 'wed' ?
-            `Graag de check waarom en waar nodig een terugkoppeling naar admin, TL of mij.%0ADank!` :
-            `Bij nieuwe gegevens, of bijzonderheden, graag een check waarom en waar nodig een terugkoppeling naar admin, TL of mij.%0ADank! `
+        let bodyBottom = `Graag de check waarom de leerling absent of te laat was en een terugkoppeling geven aan TL.%0AWaar nodig ook aan receptie om zaken te wijzigen.%0ADank!`
+        // let bodyBottom = `Bij nieuwe gegevens, of bijzonderheden, graag een check waarom en waar nodig een terugkoppeling naar admin, TL of mij.%0ADank! `
 
 
         let final = [bodyTop, line1]
@@ -51,11 +47,10 @@ export default function EmailCard({ emailInfo, day }) {
     }
 
     const getSubject = (emailInfo) => {
-        var weekNumber = getWeekDate()
-        let wedSubject = `Verzuim week ${weekNumber} eerste helft - klas ${emailInfo.klas.toUpperCase()}`;
+        var weekNumber = getWeekDate()        
         let friSubject = `Verzuim week ${weekNumber} totaal - klas ${emailInfo.klas.toUpperCase()}`
 
-        return day === "wed" ? wedSubject : friSubject
+        return friSubject
     }
 
     const onSent = () => {

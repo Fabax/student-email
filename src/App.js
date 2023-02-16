@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 function App() {
   const [emailInfos, setEmailInfos] = useState([])
-  const [day, setDay] = useState('wed')
+  const [day, setDay] = useState('fri')
 
   return (
     <div className="App flex flex-col justify-center items-center" >

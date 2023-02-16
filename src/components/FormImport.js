@@ -63,9 +63,7 @@ export default function FormImport({ onComputed, day }) {
     return (
         <div className="flex flex-col mb-6">
             <div className="mb-4 flex flex-row justify-center">
-                {
-                    day === 'fri' ? <FileImport title="Previous week" listType="students" optional={true} onImported={setPreviousStudentList} /> : null
-                }
+                <FileImport title="Previous week" listType="students" optional={true} onImported={setPreviousStudentList} />             
                 <FileImport title="Student list" listType="students" optional={false} onImported={setStudentList} />
                 <FileImport title="Teacher list" listType="teachers" optional={false} onImported={setClassList} />
             </div>
