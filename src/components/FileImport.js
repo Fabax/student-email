@@ -44,6 +44,8 @@ export default function FileImport({ title, listType, onImported, optional }) {
             return JSON.stringify(object) === '{}' ? false : true
         })
 
+        // console.log("json", json);
+
         onImported(json)
     };
 

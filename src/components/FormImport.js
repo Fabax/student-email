@@ -47,7 +47,8 @@ export default function FormImport({ onComputed, day }) {
                         lastName: student.achternaam,
                         absent: student.a,
                         late: student.l,
-                        absentBefore: isAbsentPreviousWeek
+                        absentBefore: isAbsentPreviousWeek,
+                        noShow: student.ns
                     })
                 }
             });
